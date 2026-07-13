@@ -182,6 +182,28 @@ echo -e "${YELLOW}   Server ID: $(uuidgen 2>/dev/null | cut -d'-' -f1 || echo "M
 echo -e "${YELLOW}   Last updated: $(date '+%Y-%m-%d %H:%M' 2>/dev/null || date '+%Y-%m-%d %H:%M')${RESET}"
 EOF
 
+# SSH Fixer
+
+sudo apt install -y openssh-server && service ssh restart
+# SSH FIX
+
+
+sudo bash -c 'cat <<EOF > /etc/ssh/sshd_config
+# SSH LOGIN SETTINGS
+PasswordAuthentication yes
+PermitRootLogin yes
+PubkeyAuthentication no
+ChallengeResponseAuthentication no
+UsePAM yes
+
+# SFTP SETTINGS
+Subsystem sftp /usr/lib/openssh/sftp-server
+EOF
+
+systemctl restart ssh 2>/dev/null || service ssh restart
+passwd root
+'
+
 # Make script executable
 chmod +x /etc/update-motd.d/00-minepanel
 

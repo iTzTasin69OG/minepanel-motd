@@ -156,7 +156,6 @@ fi
 echo -e "\n${BLUE}${BOLD}⚙️  QUICK COMMANDS${RESET}"
 echo -e "${WHITE}   System Info:    ${RESET}${GREEN}htop${RESET}, ${GREEN}nmon${RESET}, ${GREEN}neofetch${RESET}"
 echo -e "${WHITE}   Network Tools:  ${RESET}${GREEN}vnstat${RESET}, ${GREEN}iftop${RESET}, ${GREEN}nload${RESET}"
-echo -e "${WHITE}   Game Servers:   ${RESET}${GREEN}screen -r minecraft${RESET}, ${GREEN}./start.sh${RESET}"
 echo -e "${WHITE}   Security:       ${RESET}${GREEN}fail2ban-client status${RESET}"
 echo -e "${WHITE}   Updates:        ${RESET}${GREEN}apt update && apt upgrade${RESET} (Debian/Ubuntu)"
 echo -e "${WHITE}                   ${RESET}${GREEN}yum update${RESET} (CentOS/RHEL)"
